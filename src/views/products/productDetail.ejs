@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--head/partial-->
+    <%- include('../partials/head') %>
+    <!--fin head/partial-->
+    <link rel="stylesheet" href="/stylesheets/detailPages.css">
+</head>
+<body>
+        <!--header/partial-->
+        <%- include('../partials/header') %>
+        <!--fin header/partial--> 
+        <div class="product_detail_container">
+                <img src="/images/products/<%= productDetail.image %> " alt="<%= productDetail.name %> ">
+            <div class="detail_description">
+                <div class="detail_name">
+                    <h3><%= productDetail.name %></h3>
+                </div>
+                <div class="product_description"> 
+                    <div class="prices">
+                        <% if(productDetail.discount !== 0) { %>
+                            <h2>Precio: $<%= toThousand(productDetail.price - (productDetail.price * productDetail.discount / 100)) %> </h2> 
+                            <h4 class="discount"><%= productDetail.discount %> % OFF</h4>             
+                        <% } else{  %> 
+                            <h2> Precio: $<%= toThousand(productDetail.price) %> </h2>
+                        <% } %> 
+                    </div>
+                    <h3>Descripción: </h3>
+                    <p><%= productDetail.description %> </p>
+                </div>
+
+                <form action="/cart/addToCart/" method="POST" class="product_quantity">
+                    <input type="hidden"  name="productId" value="<%= productDetail.id%>">
+                    <label for="quantity"> Cantidad </label>
+                    <select name="quantity">
+                        <% quantities.forEach(quantity => { %> 
+                            <option value="<%= quantity %>"><%= quantity %></option>
+                        <% }) %> 
+                    </select>
+                    <button type="submit">Agregar al carrito</button>
+                </form>
+
+                <% if (user.userCategoryId === 1) { %>   
+                <div class="products_detail_buttons">
+                    <a href="/products/edit/<%= productDetail.id %> ">Editar</a>
+                    <form action="/products/delete/<%= productDetail.id %>?_method=DELETE" method="POST">
+                        <button type="submit">Eliminar</button>
+                    </form>
+                </div>
+            <% } %>
+            </div>  
+        </div>
+        <div class="return_to_list">
+            <a href="/products" >Todos nuestros productos</a>
+        </div>    
+        <!--footer/partial-->
+        <%- include('../partials/footer') %>
+        <!--final footer/partial-->
+        <script src="./javascripts/slider.js"></script>       
+    </body>
+</html>

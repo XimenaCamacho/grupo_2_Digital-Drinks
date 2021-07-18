@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Editar recetas |Digital Drinks</title>
+    <link rel="stylesheet" href="/stylesheets/styleCreateEdit.css" >
+    <!-- href="/styles/style_reg.css"> -->
+    <script src="https://kit.fontawesome.com/5376d63d7e.js" crossorigin="anonymous"></script>
+    <meta name="description" content="cocktails, drinks, bar tools, herramientas de barra, cocteleras, cocktails recepies, recetas de cocteles, cursos de cocteleria">
+</head>
+<body>
+    <!-- Aca va el Header -->
+    <div class="reg-box">
+    <a href="/recipes/"><img src="/images/header/logoAzul.svg" alt=""></a>
+        
+        <h2> Edita tu Receta</h2>
+        <form action="/recipes/edit/<%= recipeDetail.id %>?_method=PUT" method="POST" enctype="multipart/form-data"> 
+        <div class="reg-fill">  
+            <div class= " ">
+                <form action="" method="POST"></form>
+                <% if (typeof errors != 'undefined') { %>
+                    <% errors.forEach(error => { %>
+                     <ul class="errors">
+                         <li> <%= error.msg %> </li>
+                     </ul>
+                    <% }) %>
+                   <% } %>
+                <label for="name">Nombre</label>
+                <input type="text" placeholder="Nombre del Cocktail" value= "<%= recipeDetail.name %>" name="name" >
+                <label for="ingredients" >Ingredientes:</label>
+                <textarea name="ingredients" id="ingredients" class="form-input" ><%= recipeDetail.ingredients %></textarea>
+                <label for="method">Metodo de preparacion:</label>
+                <textarea name="method" id="method" class="form-input" ><%= recipeDetail.method %></textarea>
+                <label for="garnish" class="">Decoración:</label>
+                <textarea name="garnish" id="description" class="form-input"><%= recipeDetail.garnish %></textarea> 
+                <label for="image">Imagen:</label>
+                <div class="foto"> <img class="img" src ="/images/recipes/<%=recipeDetail.image%>" alt="<%= recipeDetail.name %>"> </div> 
+                <label for="file" name= "image"> Subir imagen</label>
+                <input type="file" name="image">
+                <br>
+                <button type="submit">Guardar Receta</button>  
+                <br>
+                <p class="get_out"><a href="/recipes" >Volver a recetas</a></p>
+                <br>
+            </div>
+        </div>
+    </form>
+    </div>
+<!-- Aca va el Footer -->    
+</body>
+</html>

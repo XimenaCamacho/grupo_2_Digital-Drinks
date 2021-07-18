@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--head/partial-->
+    <%- include('../partials/head') %>
+    <!--fin head/partial-->
+    <link rel="stylesheet" href="/stylesheets/cartHistory.css">
+</head>
+<body>
+    <!--header/partial-->
+    <%- include('../partials/header') %>
+    <!--fin header/partial--> 
+    <section class="history_main_container">
+        <div class="a_history_container">
+            <a href="/users/account">Mi perfil</a>
+            <a href="/">Home</a>
+        </div>
+        <h2>Mis compras:</h2>
+            <% carts.forEach(cart => { %>
+                <% if (cart.state == 0) { %> 
+                <div class="list_main_container">
+                    <div class="image_list_container">
+                        <img src="/images/products/<%= cart.image %>" alt="">
+                    </div>
+                    <article class="history_list_container">
+                        <div class="item_list_container">
+                            <p class="item_name_history"><%= cart.Product.name %> </p>
+                        </div>
+                        <div class="item_list_container">
+                            <p><%= `$ ${cart.Product.price} x ${cart.quantity} uni` %></p>
+                        </div>
+                        <div class="item_list_container">
+                            <p> $ <%= cart.subtotal %>  </p>
+                        </div>
+                        <div class="item_list_container">
+                            <p> <%= cart.createdAt %> </p>
+                        </div>
+                    </article>
+                </div>              
+                <% } %>
+            <% }) %>
+    </section>
+    <!--footer/partial-->
+    <%- include('../partials/footer') %>
+    <!--final footer/partial-->        
+</body>
+</html>

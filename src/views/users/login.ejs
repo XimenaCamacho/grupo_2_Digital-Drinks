@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Form | Digital Drinks</title>
+    <link rel="stylesheet" href="../stylesheets/styleLogin.css" />
+    <script src="../javascripts/logValidation.js" defer></script>
+    <script src="https://kit.fontawesome.com/5376d63d7e.js"crossorigin="anonymous"></script>
+    <meta name="description" content="cocktails, drinks, bar tools, herramientas de barra, cocteleras, cocktails recepies, recetas de cocteles, cursos de cocteleria"/>
+</head>
+<body>
+    <div class="centry">
+      <div class="login-box">
+        <a href="/">
+          <img class="logo" src="/images/header/logoAzul.svg" alt="Logo de DD"/>
+        </a>
+        <h2>Login Here</h2>
+        <form action="/users/login" method="POST">
+          <% if (typeof errors != 'undefined') { %>
+            <% errors.forEach(error => { %>
+             <ul class="errors">
+                 <li> <%= error.msg %> </li>
+             </ul>
+            <% }) %>
+           <% } %>
+          <div class="box">  
+            <label for="username"> Usuario</label>
+            <input type="text" name="username" placeholder="Nombre de Usuario" id="username"/>
+            <small></small>
+           </div>
+           <div class="box">  
+            <label for="password">Password</label>
+            <input type="password" name="password" placeholder="Password" id="password"/>
+            <small></small>
+           </div>
+           <div class="login-button">
+             <input type="submit" value="Enviar" />
+           </div>
+           <input type="checkbox" name="rememberMe" id="remember"/>
+           <label>Recordame</label>
+            <a href="#">Perdiste la contraseña ?</a> <br />
+            <a href="/users/register">No tenes cuenta ?</a>
+            <p class="get_out"><a href="/" >Volver al home</a></p>
+            <br>
+       </form>
+      </div>
+    </div>
+  </body>
+</html>

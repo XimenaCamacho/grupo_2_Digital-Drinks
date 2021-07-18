@@ -1,0 +1,51 @@
+<header class="header_container">
+    <div class="always_visible">  
+        <a href="/"> <img src="/images/header/logoAzul.svg" alt="Digital Drinks Logo" class="logo"></a>
+       <a href="#" class="toggle_nav">
+            <span class="fa fa-bars"></span>
+        </a> 
+    </div>
+    <nav class="navigation_bar">
+        <ul>
+            <div class="sign_button">
+                <% if (user.username) { %>
+                    <li><a href="/users/logout" class="sign_up_button"><b>Cerrar Sesión</b></a></li>
+                <% } else { %>
+                <li><a href="/users/login" class="sign_up_button"><b>Ingresar</b></a></li>
+                <li><a href="/users/register" class="sign_in_button"><b>Crear Cuenta</b></a></li>
+                    <% } %>
+            </div>
+            <div class="options">
+                <li><a href="/">Home</a></li>
+                <li><a href="/products ">Productos</a></li>
+                <li><a href="/courses">Cursos</a></li>
+                <li><a href="/recipes">Recetas</a></li>
+                <% if (user.userCategoryId === 1) { %>                
+                    <li><a href="">Bienvenid@ <%= user.username %></a>
+                        <ul class="admin_link">
+                            <li><a href="/users/account">Mi Perfil</a></li>
+                            <li><a href="/products/new">Añadir producto</a></li>
+                            <li><a href="/recipes/new">Añadir receta</a></li>
+                            <li><a href="/courses/new">Añadir curso</a></li>
+                            <li><a href="/users/list">Usuarios</a></li>   
+                            <li><a href="/cart">Carrito</a></li> 
+                            <li><a href="/cart/cartsHistory">Mis Compras</a></li>           
+                        </ul>
+                    </li>
+                <% } else if(user.userCategoryId === 2){ %>
+                    <li > <a href="">Bienvenid@ <%= user.username %></a>
+                        <ul class="admin_link">
+                            <li><a href="/users/account">Mi Perfil</a></li>
+                            <li><a href="/cart">Carrito</a></li>
+                            <li><a href="/cart/cartsHistory">Mis compras</a></li>
+                        </ul>
+                    </li>
+                <% } %>
+                <div class="not_visible">
+                    <li><a href="mailto:hola@digitaldrinks.net">Contacto</a></li>
+                    <li><a href="/aboutUs">¿Quienes somos?</a></li>
+                </div>  
+            </div>
+        </ul>
+    </nav>
+</header>

@@ -1,0 +1,241 @@
+/*--------------------------------------------------------*/
+/*Caracteristicas de reset de estilos por defecto del navegador*/
+/*--------------------------------------------------------*/
+* {
+    padding: 0; /*Quita los padding por defecto del navegador dejando todo pegado a los bordes de la caja*/
+    margin: 0; /*Quita los margenes generando que las cajas se peguen a los bordes del navegador*/
+    box-sizing: border-box; /*Adapta el contenido dentro de una caja para que entre dentro de la medida deseada. Suma bordes, padding y margin, manteniendo todo dentro del width delimitado y no se expande*/
+}
+/*--------------------------------------------------------*/
+/*caracteristicas dadas al body por cambio de fuente y uso de imagen de fondo*/
+/*--------------------------------------------------------*/
+body {
+    background-image: url(/images/home/fondo.jpg); /*Imagen de fondo del site*/
+    font-family: Verdana, sans-serif; /*Cambio de tipo de fuente para todo el texto escrito dentro del body*/
+    background-repeat: repeat; /*No repite la imagen de fondo para rellenar*/
+    background-attachment: fixed; /*Fija la imagen que aparece en el fondo y queda estatica*/
+}
+/*--------------------------------------------------------*/
+/*Inicio de los stilos del header*/
+/*--------------------------------------------------------*/
+.header_container { /*ubica los elementos del header*/
+    display: block;
+    text-align: center;
+    width: 100%;
+}
+/*Redimension del logo para poder centrarlo*/
+.logo {
+    width: 200px;
+}
+.navigation_bar a {/*quita la linea debajo de los vinculos*/
+    text-decoration: none;
+} 
+/*boton de navegacion*/
+.toggle_nav {
+    position: absolute;
+    text-align: center;
+    margin: 10px;
+    width: 50px;
+    height: 50px;
+    padding: 5px;
+    background-color: #483D8B;
+    color: white;
+    font-size: 30px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+.toggle_nav:hover {
+    background-color: #FF6600;
+}
+/*botones de login y registro*/
+.sign_button {
+    display: flex;
+    justify-content: space-around;
+    margin: 30px;
+    list-style: none;    
+}
+.sign_in_button, .sign_up_button {
+    justify-content: center;
+    padding: 15px;
+    border-radius: 5px;
+    margin: 10px;
+    color: white;
+}
+.sign_up_button, .sign_in_button:hover {
+    background-color:#483D8B ;
+} 
+.sign_in_button, .sign_up_button:hover {
+    background-color: #FF6600;
+}
+/*botones de opciones de navegacion para el usuario*/
+.options {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+}
+.options li a, .login_user{
+    display: block;
+    list-style: none;
+    background-color: #483D8B;
+    margin: 1px 0px;
+    padding: 15px 0px 15px 15px;
+    color: white;
+    font-size: 20px;
+    text-align: left;
+}
+.options li a:hover {
+    background-color: #FF6600;   
+}
+.options li .login_user:hover {
+    background-color: #FF6600;   
+}
+/*activacion del boton */
+.navigation_bar { /*Oculta el menu de opciones para versión mobile*/
+    display: none; 
+}
+.navigation_bar.active {/*Activa el menu haciendoloo visible cuando se hace click sobre el toggle nav.*/
+    display: block;
+}
+/*botones admin*/
+.admin_link {
+    list-style: none;
+}
+.options>li>ul{
+    display: none;
+  }
+.options>li:hover>ul {
+    display:block;
+  }
+/*--------------------------------------------------------*/
+/*Estilos del footer*/
+/*--------------------------------------------------------*/
+.footer_container {
+    display: block;
+    text-align: center;
+    width: 100%;
+    margin-top: 30px;
+}
+.contact {
+    display: none;
+}
+.footer_container a {
+    text-decoration: none;
+}
+.footer_container img {
+    width: 30px;
+}
+.footer_container p {
+    margin-bottom: 15px;
+}
+.contact {
+    display: none;
+    float: left;
+    align-items: flex-start;
+    flex-direction: column;
+    margin: 30px 0px;
+    margin-left: 8%;
+}
+.contact a {
+    text-decoration: none;
+    color: black;
+    margin: 10px;
+    justify-content: center;
+}
+.contact a img {
+    width: 25px;
+    margin-right: 10px;
+    justify-content: center;
+}
+.contact a:hover {
+    color: #FF6600;
+}
+.social_media {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-left: 30%;
+    width: 40%;
+    justify-content: space-around;
+}
+.copyright {
+    position: static;
+    margin: 10px 5px;
+    font-size: 12px;
+}
+/*--------------------------------------------------------*/
+/*responsive*/
+/*--------------------------------------------------------*/
+@media (min-width:480px) {
+    .logo {
+        width: 300px;
+    }
+}
+@media (min-width:780px) {
+    /*footer*/
+    .footer_container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        background-color: #473d8b34;
+        margin-top: 100px;
+    }
+    .contact {
+        display: flex;
+    }
+    .social_media {
+        float: right;
+        flex-direction: column;
+        margin: 30px 0px;
+    }
+    .social_media a {
+        padding: 10px;
+    }
+    .social_media a img {
+        width: 45px;
+    }
+    .copyright {
+        display: block;
+        width: 100%;
+        margin-top: 20px;
+    }
+}
+@media (min-width:900px) {
+    /*header y navbar*/
+    .toggle_nav, .not_visible {
+        display: none;
+    }
+    .navigation_bar {
+        display: flex;
+    }
+    .header_container {
+        display: flex;
+        justify-content: space-between;
+    }
+    .logo {
+        display: flex;
+        width: 150%;
+    }
+    .sign_button {
+        justify-content: right;
+        margin-top: 60px;
+    }
+    .options {
+        flex-direction: row;
+    }
+    .options li a, .login_user {
+        background-color: transparent;
+        color: #483D8B;
+        border-left: solid 2px #483D8B;
+        padding: 8px;
+        margin: 10px 0px;
+        font-size: 18px;
+    }
+    .options li a:hover {
+        background-color: #ff66006e;
+    }
+    .login_user:hover {
+        background-color: #ff66006e;
+    }
+}
+
+

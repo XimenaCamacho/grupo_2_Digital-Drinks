@@ -1,0 +1,131 @@
+/*--------------------------------------------------------*/
+/* Barra de busqueda */
+/*--------------------------------------------------------*/
+.central_container {
+    width: 100%;
+}
+.search_container{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+.search_container input{
+    border: solid 2px #473d8bc2;
+    padding: 5px;
+    border-radius: 10px;
+    width: 400px;
+    height: 35px;
+}
+.button_search {
+    border: none;
+    background-color: #FF6600;
+    font-size: 18px;
+    color: white; 
+    font-weight: bold;
+    cursor: pointer;
+    padding: 6px 30px;
+    border-radius: 10px;
+}
+.button_search:hover {
+    background-color: #483D8B;
+    font-size: 18px;
+    color: white; 
+}
+/*--------------------------------------------------------*/
+/* CSS products, recipes, courses  */
+/*--------------------------------------------------------*/
+.product_detail_description{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.product {
+    background-color:white;
+    border-radius: 10px;
+    box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    transition: all 0.25s;
+    width: 28%;
+    margin: 20px 0;
+    position: relative;
+    padding: 15px;
+    padding-bottom: 50px;
+}
+
+.no_items_container {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+.message {
+    flex-wrap: wrap;
+    text-align: center;
+    width: 90%;
+    padding: 40px;
+    margin: 120px 50px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+}
+.message h3 {
+    color: #483D8B;
+    margin: 20px 0px;
+}
+.message h2 {
+    color: #FF6600;
+    margin: 20px 0px;
+}
+
+@media screen and (max-width: 900px) {
+    .product_detail_description { flex-direction: column; }
+    .product {
+        width: 75%;
+        margin: 20px auto;
+    }
+}
+@media screen and (min-width: 901px) and (max-width: 1100px) {
+    .product { width: 45%; }
+}
+.product .product_img_container {
+    text-align: center;
+}
+.product_img{
+    width: 31%;
+    margin: 20px 5px;
+}
+.course_img{
+    width: 60%;
+    margin: 20px 5px;
+    height: 150px;
+}
+.recipe_img{
+    width: 45%;
+    margin: 20px 5px;
+}
+.product_description h2{
+    text-align: center;
+    min-height: 3em;
+}
+.product_description p {
+    padding-bottom: 10px;
+    text-align: center;
+}
+/* Aside */
+.categories_container{
+    display: none;
+}
+/*Botones de ver mas*/
+.see_more {
+    color: white;
+    background-color: #483D8B;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.see_more:hover {
+    background-color: #FF6600;
+}

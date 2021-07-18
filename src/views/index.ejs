@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--head/partial-->
+    <%- include('partials/head', {title: 'Digital Drinks'}) %>
+    <!--fin head/partial-->
+    <link rel="stylesheet" href="/stylesheets/slider.css">
+    <link rel="stylesheet" href="/stylesheets/indexItems.css">
+</head>
+<body>
+    <!--header/partial-->
+    <%- include('partials/header', {title: 'Digital Drinks'}) %>
+    <!--fin header/partial-->
+    <!--Slider/partial (posibilidad de manejarlo con codigo en controller)-->
+    <div class="big_slider_container">
+        <section class="slider_container">
+            <article class="slider_content fade">
+                <img src="./images/products/absolute1.png" alt="absolut">
+                <div class="offer_button_slider_style"> 
+                    <h2>Absolut Vodka</h2>
+                    <p>Oferta especial!</p>
+                </div>
+            </article>
+            <article class="slider_content fade">
+                <img src="./images/courses/Barista.jpg" alt="">
+                <div class="offer_button_slider_style">
+                    <h2>Curso de Barista</h2>
+                    <p>Oferta especial!</p>
+                </div>
+            </article>
+            <article class="slider_content fade">
+                <img src="./images/courses/mixology.png" alt="">
+                <div class="offer_button_slider_style">
+                    <h2>Mixología Molecular</h2>
+                    <p>Oferta especial!</p>
+                </div>
+            </article>
+            <article class="slider_content fade">
+                <img src="./images/products/sliderMaltas.png" alt="">
+                <div class="offer_button_slider_style">
+                    <h2>Maltas</h2>
+                    <p>OMira nuestras variedades</p>
+                </div>
+            </article>
+        </section>
+    </div>
+    <!--fin de Slider/partial-->
+    <!--visual de home/ posible partial-->
+    <main class="index_main_container">
+        <section class="index_item_container">
+            <article class="index_item">
+                <img src="./images/home/productos.jpg" alt="">
+                <div class="index_item_description">
+                    <h4>Productos</h4>
+                    <p>En Dígital Drinks contamos un una gran variedad de productos, te invitamos a conocerlos.</p>
+                    <a href="/products" class="see_more">Ver más</a>
+                </div>
+            </article>
+            <article class="index_item">
+                <img src="./images/home/cursos.jpg" alt="">
+                <div class="index_item_description">
+                    <h4>Cursos</h4>
+                    <p>Te ofrecemos cursos de mixología, flair, técnicas de manipulación entre otros.</p>
+                    <a href="/courses" class="see_more">Ver más</a>
+                </div>
+            </article>
+            <article class="index_item">
+                <img src="./images/home/recetas.jpg" alt="">
+                <div class="index_item_description">
+                    <h4>Recetas</h4>
+                    <p>Existe un Cocktail para cada ocasión.  ¿Te animás a prepararlos?.</p>
+                    <a href="/recipes" class="see_more">Ver más</a>
+                </div>
+            </article>
+        </section>
+    </main>   
+    <!--final visual de home/ posible partial-->
+    <!--footer/partial-->
+    <%- include('partials/footer') %>
+    <!--final footer/partial-->
+</body>
+</html>

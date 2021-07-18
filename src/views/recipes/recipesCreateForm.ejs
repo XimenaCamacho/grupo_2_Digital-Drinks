@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Crear Receta |Digital Drinks</title>
+    <link rel="stylesheet" href="/stylesheets/styleCreateEdit.css">
+    <script src="https://kit.fontawesome.com/5376d63d7e.js" crossorigin="anonymous"></script>
+    <meta name="description" content="cocktails, drinks, bar tools, herramientas de barra, cocteleras, cocktails recepies, recetas de cocteles, cursos de cocteleria">
+</head>
+<body>
+    <div class="reg-box"> 
+        <a href="/recipes/"> <img src="/images/header/logoAzul.svg" alt=""> </a>
+        <h2> Crea tu Receta</h2>
+        <form action="/recipes/create" method="POST" enctype="multipart/form-data">
+            <% if (typeof errors != 'undefined') { %>
+                <% errors.forEach(error => { %>
+                 <ul class="errors">
+                     <li> <%= error.msg %> </li>
+                 </ul>
+                <% }) %>
+               <% } %>
+        <div class="reg-fill">  
+            <!-- Creacion de cursos para llenarnos de dinero !! Yes !-->
+            <label for="name">Nombre</label>
+            <input type="text" name="name" placeholder="Nombre del trago">
+            <label for="ingredients" >Ingredientes :</label>
+            <textarea name="ingredients" id="ingredients" ></textarea>
+            <label for="method">Metodo de preparación:</label>
+            <textarea name="method" id="method" ></textarea>
+            <label for="garnish" class="form-input">Descripción:</label>
+            <textarea name="garnish" id ="garnish" ></textarea>
+            <p>Agregar imagen</p>
+            <input type="file" name="image">   
+            <br>
+            <button type="submit">Guardar receta</button>
+            <br>
+            <p class="get_out"><a href="/" >Volver al home</a></p>
+            <br>
+        </div>
+    </form>
+    </div>    
+</body>
+</html>
