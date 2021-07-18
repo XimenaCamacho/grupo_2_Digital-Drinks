@@ -14,7 +14,7 @@ Manual de uso:
 -PowerShell (tecla Windows + R, aparecera una ventana y escribir "powershell").
 -CMD (simboplo de sistema) en windows (tecla Windows + R, aparecera una ventana y escribir "CMD").
 
-2-Una vez abierta la terminal, utilizar el comando " git clone https://github.com/robrondon/grupo_2_Digital-Drinks.git.
+2-Una vez abierta la terminal, utilizar el comando " git clone https://github.com/XimenaCamacho/grupo_2_Digital-Drinks.git
 
 3-Abrir en VSCode la carpeta grupo_2_Digital-Drinks que se generará en el lugar seleccionado.
 
