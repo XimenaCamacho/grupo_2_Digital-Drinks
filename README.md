@@ -57,7 +57,3 @@ https://iba-world.com/iba-cocktails/ --> Pagina oficial de la Asociación Intern
 https://www.lumianbartools.com/ --> E-commerce que tomamos como referente por la gran variedad de productos que ofrecen.
 
 https://www.100x100chef.com/es/about-barman/ --> Sitio web con distintos tipos de servicios y productos para el área de la cocina y la coctelería. Nos gusta su versatilidad.
-
-Para nuestro tablero de trabajo decidimos utilizar la plataforma trello :
-
-https://trello.com/b/yYPcrsMZ/digital-drinks
